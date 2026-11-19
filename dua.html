@@ -3,240 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعا - مسنون دعائیں</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<title>مسنون دعائیں - Muhammad Tariq Mahboob</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: #0a0a0a; color: #D4AF37;
-    font-family: 'Noto Naskh Arabic', 'Noto Nastaliq Urdu', serif;
-    min-height: 100vh; display: flex; flex-direction: column;
-   font-variant-emoji: emoji; 
+    background: #0a0a0a;
+    color: #D4AF37;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 30px; background: #121212;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%);
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
   }
+  header h1 { font-size: 2rem; margin-bottom: 5px; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
   .back-btn {
-    color: #FFD700; text-decoration: none; font-size: 1.1rem;
-    display: flex; align-items: center; gap: 8px; transition: 0.3s;
-    padding: 8px 15px; border-radius: 8px; border: 1px solid transparent;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 1.2rem;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
   }
-  .back-btn:hover { background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); }
-  .site-title { font-size: 1.5rem; color: #FFD700; font-family: 'Noto Nastaliq Urdu', serif; }
-  .container { max-width: 800px; margin: 40px auto; padding: 0 20px; flex: 1; width: 100%; }
+  .back-btn:hover { background: rgba(212, 175, 55, 0.3); }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
   .dua-card {
-    background: linear-gradient(145deg, #2a1a4a, #1f1235);
-    border: 1px solid rgba(150, 100, 220, 0.4);
-    border-radius: 20px; padding: 40px 30px;
-    box-shadow: 0 10px 40px rgba(150, 100, 220, 0.2);
-    text-align: center; position: relative;
+    background: #1a103c;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    position: relative;
   }
+  
   .dua-title {
-    font-size: 2rem; color: #FFD700; margin-bottom: 30px;
-    font-family: 'Noto Nastaliq Urdu', serif;
-    border-bottom: 1px dashed rgba(255, 215, 0, 0.3);
-    padding-bottom: 15px; display: inline-block;
+    color: #D4AF37;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-decoration-color: rgba(212, 175, 55, 0.4);
+    text-underline-offset: 8px;
   }
+
   .arabic-text {
-    font-family: 'Amiri', 'Traditional Arabic', serif;
-    font-size: 2.8rem; line-height: 2; color: #FFFFFF;
-    margin: 30px 0; text-shadow: 0 0 10px rgba(255, 255, 255, 0.1); direction: rtl;
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 2rem;
+    line-height: 2.2;
+    color: #ffffff;
+    margin-bottom: 25px;
+    direction: rtl;
   }
-  .urdu-translation {
-    font-family: 'Noto Nastaliq Urdu', serif;
-    font-size: 1.5rem; line-height: 2.5; color: #e0d0ff;
-    margin: 20px 0 30px; padding: 20px;
-    background: rgba(0, 0, 0, 0.3); border-radius: 12px; border-right: 4px solid #FFD700;
+
+  .urdu-text-box {
+    background: #11092b;
+    border-right: 4px solid #D4AF37;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
   }
-  .reference { font-size: 1.1rem; color: #c9a8ff; margin-bottom: 30px; font-family: 'Noto Naskh Arabic', serif; }
-  .action-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-  .btn {
-    background: transparent; color: #FFD700; border: 1px solid #FFD700;
-    padding: 12px 25px; border-radius: 10px; font-size: 1.1rem; cursor: pointer;
-    font-family: 'Noto Nastaliq Urdu', serif; transition: all 0.3s;
-    display: flex; align-items: center; gap: 8px;
+
+  .urdu-text {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    line-height: 1.8;
   }
-  .btn:hover { background: #FFD700; color: #1f1235; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
-  .btn.favorited { background: #FFD700; color: #1f1235; }
-  .loading { text-align: center; font-size: 1.5rem; color: #FFD700; padding: 50px; }
-  footer {
-    text-align: center; padding: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);
-    background: #0d0d0d; margin-top: auto;
+
+  .reference {
+    display: inline-block;
+    color: #ffffff;
+    background: #0a0a0a;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: 1px dashed rgba(212, 175, 55, 0.5);
   }
-  footer .name { color: #FFD700; font-weight: 700; font-size: 1rem; font-family: sans-serif; }
+
   @media (max-width: 600px) {
-    .arabic-text { font-size: 2rem; }
-    .urdu-translation { font-size: 1.2rem; }
+    .arabic-text { font-size: 1.6rem; }
+    .urdu-text { font-size: 1.2rem; }
     .dua-title { font-size: 1.5rem; }
-    .dua-card { padding: 30px 15px; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="back-btn">➔ واپس</a>
-  <div class="site-title">✦ مسنون دعائیں ✦</div>
-  <div style="width: 80px;"></div>
+  <a href="index.html" class="back-btn">⬅ واپس</a>
+  <h1>✨ مسنون دعائیں ✨</h1>
+  <p id="category-name" style="color: #aaa;">لوڈ ہو رہا ہے...</p>
 </header>
 
-<div class="container">
-  <div class="dua-card" id="duaCard">
-    <div class="loading">لوڈ ہو رہا ہے...</div>
-  </div>
+<div class="container" id="duaContainer">
+  <!-- دعائیں یہاں JavaScript کے ذریعے لوڈ ہوں گی -->
 </div>
 
-<footer>
-  <p class="name">Developed by Muhammad Tariq Mahboob</p>
-</footer>
-
+<!-- ڈیٹا فائل کو لنک کریں -->
+<script src="duasData.js"></script>
 <script>
-  const duasData = {
-    "sleep": {
-      title: "سونے کی دعا",
-      arabic: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
-      urdu: "اے اللہ! تیرے نام کے ساتھ میں مرتا ہوں (سوتا ہوں) اور جیتا ہوں (جاگتا ہوں)۔",
-      reference: "صحیح بخاری، حدیث نمبر: 6324"
-    },
-    "morning": {
-      title: "صبح کی دعا",
-      arabic: "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
-      urdu: "ہم نے صبح کی اور تمام بادشاہت اللہ ہی کے لیے صبح ہوئی، اور تمام تعریفیں اللہ کے لیے ہیں، اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں۔",
-      reference: "صحیح مسلم، حدیث نمبر: 2723"
-    },
-    "food": {
-      title: "کھانے سے پہلے کی دعا",
-      arabic: "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ",
-      urdu: "اللہ کے نام سے اور اللہ ہی کی برکت پر (شروع کرتا ہوں)۔",
-      reference: "سنن ابی داؤد، حدیث نمبر: 3767"
-    },
-    "travel": {
-      title: "سفر کی دعا",
-      arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ",
-      urdu: "پاک ہے وہ ذات جس نے یہ سواری ہمارے تابع کر دی، حالانکہ ہم اسے قابو میں نہیں کر سکتے تھے، اور بے شک ہم اپنے رب کی طرف لوٹنے والے ہیں۔",
-      reference: "صحیح مسلم، حدیث نمبر: 1342"
-    },
-    "distress": {
-      title: "پریشانی اور غم کی دعا",
-      arabic: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ",
-      urdu: "اے اللہ! میں تیری پناہ مانگتا ہوں غم اور پریشانی سے، اور بے بسی اور سستی سے۔",
-      reference: "صحیح بخاری، حدیث نمبر: 6369"
-    },
-    "namaz": {
-      title: "نماز کے بعد کی دعا",
-      arabic: "اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
-      urdu: "اے اللہ! تو ہی سلام ہے اور تجھ ہی سے سلامتی ہے، تو بڑا بابرکت ہے، اے عظمت اور بزرگی والے۔",
-      reference: "صحیح مسلم، حدیث نمبر: 591"
-    },
-    "ghar": {
-      title: "گھر میں داخل ہونے کی دعا",
-      arabic: "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى رَبِّنَا تَوَكَّلْنَا",
-      urdu: "اللہ کے نام سے ہم داخل ہوئے، اور اللہ کے نام سے ہم نکلے، اور اپنے رب ہی پر ہم نے بھروسہ کیا۔",
-      reference: "سنن ابی داؤد، حدیث نمبر: 5096"
-    },
-    "daily": {
-      title: "لباس پہننے کی دعا",
-      arabic: "الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",
-      urdu: "تمام تعریفیں اللہ کے لیے ہیں جس نے مجھے یہ لباس پہنایا اور بغیر میری طاقت اور کوشش کے مجھے یہ عطا فرمایا۔",
-      reference: "سنن ابی داؤد، حدیث نمبر: 4023"
-    },
-    "wakeup": {
-      title: "نیند سے بیدار ہونے کی دعا",
-      arabic: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
-      urdu: "تمام تعریفیں اللہ کے لیے ہیں جس نے ہمیں موت (نیند) کے بعد زندگی (بیداری) عطا فرمائی، اور اسی کی طرف لوٹ کر جانا ہے۔",
-      reference: "صحیح بخاری، حدیث نمبر: 6312"
-    },
-    "wuzu": {
-      title: "وضو کے بعد کی دعا",
-      arabic: "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
-      urdu: "میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اور میں گواہی دیتا ہوں کہ محمد ﷺ اس کے بندے اور رسول ہیں۔",
-      reference: "صحیح مسلم، حدیث نمبر: 234"
-    },
-    "leavehome": {
-      title: "گھر سے نکلنے کی دعا",
-      arabic: "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
-      urdu: "اللہ کے نام سے (نکل رہا ہوں)، میں نے اللہ پر بھروسہ کیا، اور اللہ کی توفیق کے بغیر نہ کوئی چارہ ہے نہ طاقت۔",
-      reference: "سنن ابی داؤد، حدیث نمبر: 5095"
-    },
-    "washroom": {
-      title: "بیت الخلا میں داخل ہونے کی دعا",
-      arabic: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
-      urdu: "اے اللہ! میں تیری پناہ مانگتا ہوں شیطان نر اور مادہ سے۔",
-      reference: "صحیح بخاری، حدیث نمبر: 142"
-    },
-    "masjid": {
-      title: "مسجد میں داخل ہونے کی دعا",
-      arabic: "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",
-      urdu: "اے اللہ! میرے لیے اپنی رحمت کے دروازے کھول دے۔",
-      reference: "صحیح مسلم، حدیث نمبر: 713"
-    },
-    "azan": {
-      title: "اذان کے بعد کی دعا",
-      arabic: "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ",
-      urdu: "اے اللہ! اس کامل دعا اور قائم ہونے والی نماز کے رب، محمد ﷺ کو وسیلہ اور فضیلت عطا فرما، اور انہیں اس مقام محمود پر پہنچا جس کا تو نے وعدہ فرمایا ہے۔",
-      reference: "صحیح بخاری، حدیث نمبر: 614"
-    }
-  };
+  // URL سے کیٹیگری کا نام نکالیں (مثلاً dua.html?cat=food)
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryKey = urlParams.get('cat') || 'morning_evening'; // ڈیفالٹ صبح و شام
 
-  window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category');
-    const card = document.getElementById('duaCard');
+  const container = document.getElementById('duaContainer');
+  const categoryNameEl = document.getElementById('category-name');
 
-    // آڈیو بٹن اور آڈیو ٹیگ کو ہٹا دیا گیا ہے
-    if (category && duasData[category]) {
-      const dua = duasData[category];
+  // ڈیٹا چیک کریں کہ موجود ہے یا نہیں
+  if (allDuas[categoryKey]) {
+    const category = allDuas[categoryKey];
+    categoryNameEl.innerText = category.title;
+
+    // ہر دعا کے لیے کارڈ بنائیں
+    category.duas.forEach(dua => {
+      const card = document.createElement('div');
+      card.className = 'dua-card';
       card.innerHTML = `
         <h2 class="dua-title">${dua.title}</h2>
-        <div class="arabic-text" id="arabicText">${dua.arabic}</div>
-        <div class="urdu-translation" id="urduText">${dua.urdu}</div>
-        <div class="reference">📖 حوالہ: ${dua.reference}</div>
-        <div class="action-buttons">
-          <button class="btn" onclick="copyDua()" id="copyBtn">📋 کاپی کریں</button>
-          <button class="btn" onclick="toggleFavorite(this)" id="favBtn">⭐ فیورٹ میں شامل کریں</button>
+        <div class="arabic-text">${dua.arabic}</div>
+        <div class="urdu-text-box">
+          <div class="urdu-text">${dua.urdu}</div>
         </div>
+        <div class="reference">📖 حوالہ: ${dua.ref}</div>
       `;
-    } else {
-      card.innerHTML = `
-        <h2 class="dua-title">سونے کی دعا</h2>
-        <div class="arabic-text" id="arabicText">بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا</div>
-        <div class="urdu-translation" id="urduText">اے اللہ! تیرے نام کے ساتھ میں مرتا ہوں (سوتا ہوں) اور جیتا ہوں (جاگتا ہوں)۔</div>
-        <div class="reference">📖 حوالہ: صحیح بخاری، حدیث نمبر: 6324</div>
-        <div class="action-buttons">
-          <button class="btn" onclick="copyDua()" id="copyBtn">📋 کاپی کریں</button>
-          <button class="btn" onclick="toggleFavorite(this)" id="favBtn">⭐ فیورٹ میں شامل کریں</button>
-        </div>
-      `;
-    }
-  };
-
-  function copyDua() {
-    let arabic = document.getElementById("arabicText").innerText;
-    let urdu = document.getElementById("urduText").innerText;
-    let textToCopy = arabic + "\n\n" + urdu;
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      let btn = document.getElementById("copyBtn");
-      let originalText = btn.innerHTML;
-      btn.innerHTML = "✓ کاپی ہو گیا!";
-      btn.style.background = "#FFD700";
-      btn.style.color = "#1f1235";
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = "transparent";
-        btn.style.color = "#FFD700";
-      }, 2000);
+      container.appendChild(card);
     });
-  }
-
-  function toggleFavorite(btn) {
-    btn.classList.toggle("favorited");
-    if (btn.classList.contains("favorited")) {
-      btn.innerHTML = "⭐ فیورٹ میں شامل ہے";
-    } else {
-      btn.innerHTML = "⭐ فیورٹ میں شامل کریں";
-    }
+  } else {
+    container.innerHTML = `<h2 style="text-align:center; color:#fff;">معذرت، یہ کیٹیگری موجود نہیں ہے۔</h2>`;
   }
 </script>
 
